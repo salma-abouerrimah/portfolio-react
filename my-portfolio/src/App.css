@@ -1,38 +1,197 @@
-.App {
+/* Global styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #001f3f;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid #007bff;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+.home, .projects, .resume, .about, .contact {
+  max-width: 900px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Section styles for projects */
+.projects {
+  padding: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.projects ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.projects li {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.projects h2 {
+  font-size: 1.5rem;
+  color: #001f3f;
+  margin: 0;
+}
+
+.projects p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+button {
+  background-color: #007bff;
   color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Add/Edit project section */
+.add-project, .edit-project {
+  margin-top: 2rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.add-project h2, .edit-project h2 {
+  font-size: 1.75rem;
+  color: #001f3f;
+  margin-bottom: 1.5rem;
+}
+
+.add-project input,
+.add-project textarea,
+.edit-project input,
+.edit-project textarea {
+  display: block;
+  width: 100%;
+  margin: 0.8rem 0;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.add-project input:focus,
+.add-project textarea:focus,
+.edit-project input:focus,
+.edit-project textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+textarea {
+  min-height: 120px;
+}
+
+.add-project button,
+.edit-project button {
+  background-color: #27ae60;
+  color: white;
+  border-radius: 4px;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.add-project button:hover,
+.edit-project button:hover {
+  background-color: #2ecc71;
+}
+
+/* General header and paragraph styling */
+h1 {
+  color: #001f3f;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+p {
+  line-height: 1.6;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .projects ul {
+    padding: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .projects li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .add-project, .edit-project {
+    padding: 1rem;
+  }
+
+  .add-project input, .add-project textarea,
+  .edit-project input, .edit-project textarea {
+    padding: 0.6rem;
   }
 }
